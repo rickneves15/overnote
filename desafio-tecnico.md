@@ -4,13 +4,15 @@
 
 Desenvolver uma plataforma de compartilhamento de anotações. Os usuários devem poder criar, editar, excluir e compartilhar anotações com outros usuários.
 
+**Obs.:** A autenticação já está disponível no projeto. O foco será apenas nas features principais do sistema.
+
 ## Stack Tecnológica
 
 - Next.js 14+ (App dir)
 - TipTap
 - Prisma
 
-## Funcionalidades Essenciais
+## Funcionalidades
 
 - Editor Rich Text WYSIWYG
 - Autosave durante edição
