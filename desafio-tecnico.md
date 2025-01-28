@@ -36,7 +36,7 @@ Envie um e-mail para pessoas@overlens.com.br com o assunto "Desafio Técnico Dev
 
 ## Prazo
 
-3 dias corridos após o recebimento do desafio.
+Até 4 dias corridos após o recebimento do desafio.
 
 **Obs.:** Caso o prazo não encaixe no seu cronograma, por favor envie um e-mail para [pessoas@overlens.com.br](mailto:pessoas@overlens.com.br) com o assunto "Desafio Técnico Dev Fullstack - Prazo de entrega" para encontrarmos a melhor solução.
 
