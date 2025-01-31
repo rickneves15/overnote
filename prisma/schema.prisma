@@ -59,7 +59,6 @@ model VerificationToken {
 
 model Note {
   id        String   @id @default(cuid())
-  title     String
   content   Json?
   isPublic  Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])

@@ -1,7 +1,6 @@
 -- CreateTable
 CREATE TABLE "Note" (
     "id" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
     "content" JSONB,
     "isPublic" BOOLEAN NOT NULL DEFAULT false,
     "authorId" TEXT NOT NULL,
