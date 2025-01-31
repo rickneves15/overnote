@@ -11,20 +11,14 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { UserButton } from './user-button';
 
-export  function Navbar() {
+export function Navbar() {
   const pathname = usePathname();
 
-  const navigation = [
-    { name: 'Feed', href: '/' },
-  ];
+  const navigation = [{ name: 'Feed', href: '/' }];
 
   return (
     <header className="border-b bg-background px-2">
@@ -41,7 +35,7 @@ export  function Navbar() {
                     <NavigationMenuLink
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        pathname === item.href && 'bg-accent'
+                        pathname === item.href && 'bg-accent',
                       )}
                     >
                       {item.name}
@@ -69,7 +63,9 @@ export  function Navbar() {
                     href={item.href}
                     className={cn(
                       'text-sm font-medium transition-colors hover:text-primary',
-                      pathname === item.href ? 'text-foreground' : 'text-muted-foreground'
+                      pathname === item.href
+                        ? 'text-foreground'
+                        : 'text-muted-foreground',
                     )}
                   >
                     {item.name}
@@ -83,7 +79,7 @@ export  function Navbar() {
           </Link>
         </div>
 
-        <UserButton/>
+        <UserButton />
       </div>
     </header>
   );
