@@ -1,17 +1,18 @@
 'use client';
 
-import { NoteCard, NoteData } from '@/components/note-card';
+import { NoteCard } from '@/components/note-card';
 import { useQuery } from '@tanstack/react-query';
 
-export default function Home() {
+export default function Page({ params }: { params: { shareKey: string } }) {
+  const { shareKey } = params;
   const {
-    data: publicNotes,
+    data: note,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['my-notes'],
+    queryKey: ['notes', shareKey],
     queryFn: async () => {
-      const res = await fetch('/api/my-notes');
+      const res = await fetch(`/api/notes/${shareKey}`);
       if (!res.ok) {
         throw new Error('Failed to fetch notes');
       }
@@ -23,20 +24,14 @@ export default function Home() {
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">My Feed</h1>
+        <h1 className="text-3xl font-bold">Show Note</h1>
       </div>
 
       <div className="flex justify-center items-center mb-8">
         {isLoading && <p>Loading...</p>}
-        {error && <p>Error: {error.message}</p>}
+        {error && <p>Note retrieval error</p>}
       </div>
-      {publicNotes && (
-        <div className="grid gap-6">
-          {publicNotes.map((note: NoteData) => (
-            <NoteCard key={note.id} note={note} />
-          ))}
-        </div>
-      )}
+      {note && <NoteCard key={note.id} note={note} />}
     </main>
   );
 }

@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
 import { ReactQueryProvider } from '@/providers/react-query';
+import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -31,7 +32,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SessionProvider>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
+          <ReactQueryProvider>
+            {children}
+            <Toaster />
+          </ReactQueryProvider>
         </SessionProvider>
       </body>
     </html>
